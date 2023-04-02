@@ -11,3 +11,5 @@ print("Views:" , yt.views)
 yd= yt.streams.get_highest_resolution()
 
 yd.download("C:/Users/murabıt/Desktop/ytDownload")
+
+#in windows you need to type python ytDownloader.py "youtube link"
