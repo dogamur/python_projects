@@ -1,14 +1,19 @@
 from PIL import Image, ImageFilter, ImageOps
 import os
 
-path = r"C:\Users\murabıt\Desktop"
-pathOut = r"C:\Users\murabıt\Desktop\editedImgs"
+# Prompt user to enter image path
+img_path = input("Enter the path of the image you want to edit: ")
 
-if not os.path.exists(pathOut):
-    os.mkdir(pathOut)
+# Create output directory if it doesn't exist
+path_out = os.path.dirname(img_path) + "/editedImgs"
+if not os.path.exists(path_out):
+    os.mkdir(path_out)
 
-img = Image.open(f"{path}/img.jpg")
+# Open the image and apply colorize filter
+img = Image.open(img_path)
+pink_img = ImageOps.colorize(img.convert('L'), black="purple", white="pink")
 
-pink_img = ImageOps.colorize(img.convert('L'), black="white", white="pink")
-clean_name = os.path.splitext("img.jpg")[0]
-pink_img.save(f"{pathOut}/{clean_name}_pink.jpg")
+# Save the edited image
+clean_name = os.path.splitext(os.path.basename(img_path))[0]
+pink_img.save(f"{path_out}/{clean_name}_pink.jpg")
+print(f"Image saved to {path_out}/{clean_name}_pink.jpg")
