@@ -1,3 +1,5 @@
+#My first implementation of naive bayes, it simply predicts if someon is likely to watch a movie based on what they've watched before
+
 import numpy as np
 X_train=np.array([
     [0,1,1],
