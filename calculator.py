@@ -1,3 +1,4 @@
+
 def add(a,b):
     add=a+b
     print(str(a) + " + " + str(b) +" = " + str(add))
@@ -17,7 +18,7 @@ def div(a,b):
 while True:
 
     print("A. Addition")
-    print("B. Substraction")
+    print("B. Subtraction")
     print("C. Multiplicaiton")
     print("D. Division")
     print("E. Exit")
